@@ -7,9 +7,7 @@
 
 html,
 body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  height: 100vh;
 }
 
 body {
@@ -30,13 +28,66 @@ body {
   flex-direction: column;
   width: 380px;
   overflow: auto;
+
 }
 
 .container_image {
   max-width: 100%;
   border-radius: 2% 2% 0 0;
+  display: block;
 }
 
 .container_main {
   background-color: #283e50;
+  text-align: center;
+  color: white;
+  margin: 0;
+
+
+}
+
+.container_title {
+  font-family: Lobster;
+  margin: 18px;
+  font-size: 30px;
+}
+
+p {
+  line-height: 1.5;
+  margin: 16px;
+}
+
+.container_buttons {
+  background-color: #283e50;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.rules,
+.play {
+  height: 52px;
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rules {
+  background-color: #1fcca4;
+}
+
+.play {
+  background-color: #0197f6;
+}
+
+.rules:hover {
+  background-color: #1cbb96;
+}
+
+.play:hover {
+  background-color: #0090e9;
 }
