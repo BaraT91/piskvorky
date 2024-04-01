@@ -46,10 +46,11 @@ body {
 
 }
 
-.container_title {
+.container_title,
+.game__container--title {
   font-family: Lobster;
   margin: 18px;
-  font-size: 30px;
+  font-size: 40px;
 }
 
 p {
@@ -65,8 +66,8 @@ p {
   gap: 1px;
 }
 
-.rules,
-.play {
+.container__buttons--rules,
+.container__buttons--play {
   height: 52px;
   cursor: pointer;
   text-decoration: none;
@@ -76,18 +77,89 @@ p {
   align-items: center;
 }
 
-.rules {
+.container__buttons--rules,
+.game__link--home {
   background-color: #1fcca4;
 }
 
-.play {
+.container__buttons--play,
+.restart__symbol {
   background-color: #0197f6;
 }
 
-.rules:hover {
+.container__buttons--rules:hover,
+.container__buttons--rules:focus,
+.game__link--home:hover,
+.game__link--home:focus {
   background-color: #1cbb96;
 }
 
-.play:hover {
+.container__buttons--play:hover,
+.container__buttons--play:focus,
+.restart__symbol:hover,
+.restart__symbol:focus {
   background-color: #0090e9;
+}
+
+.hra_container {
+  max-width: 80vmin;
+}
+
+/*Stylování hra.html */
+
+.game__container {
+  max-width: 80vmin;
+  margin: 16px auto 32px auto;
+}
+
+
+.game__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.game__nav--left,
+.game__nav--right {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  gap: 8px;
+}
+
+.game__link {
+  display: block;
+  padding: 5px 8px;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.game__symbol {
+  height: 16px;
+}
+
+.game__symbol--ring {
+  margin-right: 45px;
+}
+
+
+.game__board {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1.7px solid #283e50;
+
+}
+
+.game__square {
+  width: 10%;
+  aspect-ratio: 1 / 1;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1.7px solid black;
+}
+
+.game__square:hover,
+.game__square:focus {
+  background-color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
 }
