@@ -162,3 +162,19 @@ p {
   background-color: rgba(255, 255, 255, 0.6);
   cursor: pointer;
 }
+
+.board__field--circle {
+  background-image: url("Images/circle2.svg");
+}
+
+.board__field--cross {
+  background-image: url("Images/cross2.svg");
+}
+
+.board__field--circle,
+.board__field--cross {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 65%;
+  animation: zoomIn 0.15s;
+}
