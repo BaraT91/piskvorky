@@ -7,13 +7,13 @@ const selectButton = (event) => {
     currentPlayer = 'cross';
     document
       .getElementById('current-player')
-      .setAttribute('src', 'images/cross.svg');
+      .setAttribute('src', 'Images/cross.svg');
   } else {
     event.target.classList.add('board__field--cross');
     currentPlayer = 'circle';
     document
       .getElementById('current-player')
-      .setAttribute('src', 'images/circle.svg');
+      .setAttribute('src', 'Images/circle.svg');
   }
 };
 
