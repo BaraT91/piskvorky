@@ -176,5 +176,24 @@ p {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 65%;
-  animation: zoomIn 0.15s;
+  animation: zoomIn 0.8s;
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: rotateY(0deg);
+    background-position: -100px, -100px;
+  }
+
+  25% {
+    background-position: -100px, -100px;
+  }
+
+  50% {
+    background-position: center;
+  }
+
+  100% {
+    transform: rotateY(180deg);
+  }
 }
