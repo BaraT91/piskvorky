@@ -176,10 +176,10 @@ p {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 65%;
-  animation: zoomIn 0.8s;
+  animation: rotate 0.8s;
 }
 
-@keyframes zoomIn {
+@keyframes rotate {
   0% {
     transform: rotateY(0deg);
     background-position: -100px, -100px;
