@@ -59,8 +59,8 @@ document
 
 document
   .querySelector('.restart__symbol')
-  .addEventListener('click', function () {
+  .addEventListener('click', (event) => {
     if (!confirm('Opravdu chceš začít znovu?')) {
-      e.preventDefault();
+      event.preventDefault();
     }
   });
