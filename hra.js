@@ -5,11 +5,15 @@ const selectButton = (event) => {
   if (currentPlayer === 'circle') {
     event.target.classList.add('board__field--circle');
     currentPlayer = 'cross';
-    document.getElementById('current-player').src = 'image/cross2.svg';
+    document
+      .getElementById('current-player')
+      .setAttribute('src', 'images/cross.svg');
   } else {
     event.target.classList.add('board__field--cross');
     currentPlayer = 'circle';
-    document.getElementById('current-player').src = 'image/circle2.svg';
+    document
+      .getElementById('current-player')
+      .setAttribute('src', 'images/circle.svg');
   }
 };
 
