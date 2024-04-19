@@ -1,4 +1,7 @@
+import { findWinner } from 'https://unpkg.com/piskvorky@0.1.4';
+
 let currentPlayer = 'circle';
+const pole = document.querySelectorAll('button');
 
 const selectButton = (event) => {
   event.target.disabled = true;
@@ -15,47 +18,34 @@ const selectButton = (event) => {
       .getElementById('current-player')
       .setAttribute('src', 'Images/circle.svg');
   }
+
+  // Úkol č. 4
+
+  const changeSymbol = [...pole].map((button) => {
+    if (button.classList.contains('board__field--circle')) {
+      return 'o';
+    } else if (button.classList.contains('board__field--cross')) {
+      return 'x';
+    } else {
+      return '_';
+    }
+  });
+
+  const winner = findWinner(changeSymbol);
+  if (winner === 'o' || winner === 'x') {
+    setTimeout(() => {
+      alert(`Vyhrál hráč se symbolem ${winner} !`);
+      location.reload();
+    }, 150);
+  } else if (winner === 'tie') {
+    setTimeout(() => {
+      alert(`Hra skončila remízou!`);
+      location.reload();
+    }, 150);
+  }
 };
 
-document
-  .querySelector('button:nth-child(1)')
-  .addEventListener('click', selectButton);
-
-document
-  .querySelector('button:nth-child(2)')
-  .addEventListener('click', selectButton);
-
-document
-  .querySelector('button:nth-child(3)')
-  .addEventListener('click', selectButton);
-
-document
-  .querySelector('button:nth-child(4)')
-  .addEventListener('click', selectButton);
-
-document
-  .querySelector('button:nth-child(5)')
-  .addEventListener('click', selectButton);
-
-document
-  .querySelector('button:nth-child(6)')
-  .addEventListener('click', selectButton);
-
-document
-  .querySelector('button:nth-child(7)')
-  .addEventListener('click', selectButton);
-
-document
-  .querySelector('button:nth-child(8)')
-  .addEventListener('click', selectButton);
-
-document
-  .querySelector('button:nth-child(9)')
-  .addEventListener('click', selectButton);
-
-document
-  .querySelector('button:nth-child(10)')
-  .addEventListener('click', selectButton);
+// Tlačítko restart
 
 document
   .querySelector('.restart__symbol')
@@ -64,3 +54,9 @@ document
       event.preventDefault();
     }
   });
+
+// Označení všech políček
+const buttons = document.querySelectorAll('.game__square');
+buttons.forEach((button) => {
+  button.addEventListener('click', selectButton);
+});
