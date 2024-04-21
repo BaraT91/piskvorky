@@ -36,12 +36,12 @@ const selectButton = (event) => {
     setTimeout(() => {
       alert(`Vyhrál hráč se symbolem ${winner} !`);
       location.reload();
-    }, 150);
+    }, 550);
   } else if (winner === 'tie') {
     setTimeout(() => {
       alert(`Hra skončila remízou!`);
       location.reload();
-    }, 150);
+    }, 550);
   }
 };
 
