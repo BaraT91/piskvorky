@@ -3,7 +3,7 @@ import { findWinner } from 'https://unpkg.com/piskvorky@0.1.4';
 let currentPlayer = 'circle';
 const pole = document.querySelectorAll('button');
 
-const selectButton = (event) => {
+const selectButton = async (event) => {
   event.target.disabled = true;
   if (currentPlayer === 'circle') {
     event.target.classList.add('board__field--circle');
@@ -42,6 +42,27 @@ const selectButton = (event) => {
       alert(`Hra skončila remízou!`);
       location.reload();
     }, 550);
+  }
+  if (winner === null && currentPlayer === 'cross') {
+    console.log('křížek');
+
+    const response = await fetch(
+      'https://piskvorky.czechitas-podklady.cz/api/suggest-next-move',
+      {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          board: changeSymbol,
+          player: 'x',
+        }),
+      },
+    );
+    const data = await response.json();
+    const { x, y } = data.position;
+    const index = pole[x + y * 10];
+    index.click();
   }
 };
 
